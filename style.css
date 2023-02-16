@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* -------------------------NAV BAR---------------------------- */
+
+
+nav {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    height: 50px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin-left: 3rem;
+}
+
+
+.login {
+    width: 25%;
+    margin-right: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.input {
+    text-align: center;
+    /* font-size: 12px; */
+
+    border-radius: 25px;
+    border: none;
+    background-color: gainsboro;
+}
+
+
+.login--enter {
+    border-radius: 28px;
+    font-weight: bold;
+    font-size: 28px;
+    background-color: transparent;
+    border: none;
+}
