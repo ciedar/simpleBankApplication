@@ -12,6 +12,7 @@
 nav {
     margin-right: auto;
     margin-left: auto;
+    margin-top: 2rem;
     width: 100%;
     height: 50px;
     position: relative;
@@ -49,4 +50,51 @@ h1 {
     font-size: 28px;
     background-color: transparent;
     border: none;
+}
+
+
+
+
+/* ------------------------BANK SECTION------------------ */
+
+.bank--section {
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 25px;
+
+}
+
+
+.avaible--section {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    /* align-items: center; */
+}
+
+.personal {
+    position: relative;
+    width: 25%;
+    height: 150px;
+    align-self: center;
+}
+
+.personal-content {
+    position: relative;
+    /* margin-top: 2rem; */
+    border: 2px solid green;
+    width: 25%;
+    text-align: center;
+    height: 125px;
+}
+
+.transfer,
+.zloz,
+.zloz--0 {
+    align-items: flex-end;
 }
