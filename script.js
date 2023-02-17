@@ -19,6 +19,7 @@ const listOfAccounts = [account1, account2];
 const loginButton = document.querySelector(".login--enter");
 const loginInput = document.querySelector(".login--input");
 const passwordInput = document.querySelector(".password--input");
+const mainVisable = document.querySelector(".main");
 
 let currentAccount;
 
@@ -27,6 +28,7 @@ const loginFunction = function () {
         if (loginInput.value === current.login & Number(passwordInput.value) === current.pin) {
             currentAccount = current;
             console.log(currentAccount)
+            mainVisable.style.opacity = 1;
         }
     })
 }
