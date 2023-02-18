@@ -14,6 +14,12 @@ const account2 = {
     history: [122, 168, -129, -82, 76, -508, 298]
 }
 
+
+
+const listOfHiddenCategories = ["Start", "Przelewy", "Moje Finanse", "Historia", "Usługi", "Dla Ciebie", "Kontakt"];
+
+
+
 const listOfAccounts = [account1, account2];
 
 let currentAccount;
@@ -22,6 +28,8 @@ const loginInput = document.querySelector(".login--input");
 const passwordInput = document.querySelector(".password--input");
 const mainVisable = document.querySelector(".main");
 const navbar = document.querySelector(".nav--bar");
+
+const hiddenBar = document.querySelector(".hidden--bar");
 
 const currentBalance = function (account) {
     account.balance = account.history.reduce(function (value1, value2) {
@@ -41,7 +49,19 @@ const loginFunction = function () {
             mainVisable.style.visibility = "visible";
             navbar.style.visibility = "hidden";
         }
+
     })
+}
+
+
+const hiddenCategories = function (list) {
+
+    hiddenBar.innerHTML = "";
+    for (let i = 0; i < listOfHiddenCategories.length; i++) {
+        const category = `<a href="#" class="hidden-bar-start">${listOfHiddenCategories[i]}</a>`;
+        console.log(category);
+        hiddenBar.insertAdjacentHTML("beforeend", category);
+    }
 }
 
 
@@ -61,5 +81,6 @@ loginButton.addEventListener("click", function (a) {
     a.preventDefault();
     loginFunction();
     currentBalance(currentAccount);
+    hiddenCategories(listOfHiddenCategories);
 });
 
