@@ -1,5 +1,7 @@
 "use strict";
 
+// ------------------------------- DATA -----------------------------------
+
 const account1 = {
     owner: "Dariusz Cieśla",
     login: "darcie",
@@ -30,6 +32,14 @@ const mainVisable = document.querySelector(".main");
 const navbar = document.querySelector(".nav--bar");
 
 const hiddenBar = document.querySelector(".hidden--bar");
+
+
+
+
+// -----------------------------FUNCTIONS -----------------------
+
+
+
 
 const currentBalance = function (account) {
     account.balance = account.history.reduce(function (value1, value2) {
@@ -73,7 +83,7 @@ const hiddenCategories = function (list) {
 
 
 
-
+// ---------------------------------------- CODE--------------------------------
 
 
 
