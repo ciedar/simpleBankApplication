@@ -5,9 +5,22 @@
     box-sizing: border-box;
 }
 
+
 .main {
-    opacity: 0;
+    position: relative;
+    display: inline;
+    height: 250px;
+    background-color: #9ff7d6;
+    width: 60%;
+
+    visibility: hidden;
+    /* display: none; */
 }
+
+button {
+    cursor: pointer;
+}
+
 
 
 /* -------------------------NAV BAR---------------------------- */
@@ -40,7 +53,6 @@ h1 {
 
 .input {
     text-align: center;
-    /* font-size: 12px; */
 
     border-radius: 25px;
     border: none;
@@ -58,6 +70,26 @@ h1 {
 
 
 
+/* -------------------HIDDEN - BAR ----------------------- */
+.hidden--bar {
+    padding-left: 2rem;
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    position: absolute;
+    top: -600%;
+
+}
+
+
+.hidden--bar a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
 
 /* ------------------------BANK SECTION------------------ */
 
@@ -78,7 +110,6 @@ h1 {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
-    /* align-items: center; */
 }
 
 .personal {
@@ -90,7 +121,6 @@ h1 {
 
 .personal-content {
     position: relative;
-    /* margin-top: 2rem; */
     border: 2px solid green;
     width: 25%;
     text-align: center;
@@ -101,4 +131,13 @@ h1 {
 .zloz,
 .zloz--0 {
     align-items: flex-end;
+    margin-top: 25px;
+}
+
+.zloz,
+.zloz--0 {
+    background-color: #39e75f;
+    border: transparent;
+    width: 50%;
+    height: 25%;
 }

@@ -28,9 +28,9 @@ const loginFunction = function () {
     listOfAccounts.find(function (current) {
         if (loginInput.value === current.login & Number(passwordInput.value) === current.pin) {
             currentAccount = current;
-            console.log(currentAccount)
-            mainVisable.style.opacity = 1;
-            navbar.style.opacity = 0;
+            console.log(currentAccount);
+            mainVisable.style.visibility = "visible";
+            navbar.style.visibility = "hidden";
         }
     })
 }
