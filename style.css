@@ -49,7 +49,7 @@ h1 {
 
 .login {
     width: 25%;
-    margin-right: 5rem;
+    margin-right: 7rem;
     display: flex;
     justify-content: space-evenly;
 }
@@ -74,27 +74,54 @@ h1 {
 
 
 /* -------------------HIDDEN - BAR ----------------------- */
-.hidden--bar {
-    padding-left: 2rem;
-    display: flex;
-    gap: 1rem;
+.hidden--after {
     margin-left: auto;
     margin-right: auto;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     visibility: visible;
 
 
     position: absolute;
     top: 0%;
 
+
+    /* background-color: #39e75f; */
+    width: 95%;
+
 }
 
 
-.hidden--bar a {
+.hidden--after a {
     text-decoration: none;
     cursor: pointer;
     color: black;
 }
+
+.hidden--bar {
+    padding-left: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    width: 50%;
+    /* background-color: #ff1744; */
+
+}
+
+
+/* 
+.profile {
+    border-radius: 50px;
+    height: 45px;
+    width: 45px;
+    border: green solid 1px;
+    visibility: collapse;
+} */
+
+
+
 
 /* ------------------------BANK SECTION------------------ */
 
@@ -143,7 +170,7 @@ h1 {
 
 .zloz,
 .zloz--0 {
-    background-color: #39e75f;
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
     border: transparent;
     width: 50%;
     height: 25%;
@@ -182,25 +209,26 @@ h1 {
 
 .movement--type--wpłata {
 
-    background-color: #39e75f;
-    font-size: 25px;
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+    font-size: 20px;
     font-family: sans-serif;
     border-radius: 20px;
     width: 10%;
+    color: #fff;
     font-style: italic;
     text-transform: uppercase;
-    display: flex;
-    justify-content: flex-start;
+    /* display: flex; */
+    /* justify-content: flex-start; */
 }
 
 .movement--type--wypłata {
 
-    background-color: #ff1744;
-    font-size: 25px;
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+    font-size: 20px;
     font-family: sans-serif;
     font-style: italic;
     border-radius: 20px;
-    color: white;
+    color: #fff;
     width: 10%;
     text-transform: uppercase;
 }

@@ -30,7 +30,7 @@ const loginInput = document.querySelector(".login--input");
 const passwordInput = document.querySelector(".password--input");
 const mainVisable = document.querySelector(".main");
 const navbar = document.querySelector(".nav--bar");
-
+const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
 
@@ -82,6 +82,22 @@ const hiddenCategories = function (list) {
 }
 
 
+const renderHistory = function (account) {
+    let type;
+    historyMovements.innerHTML = "";
+    account.history.filter(function (value) {
+        type = value > 0 ? "wpłata" : "wypłata";
+        console.log(type);
+        const html = `<div class="movement">
+            <div class="movement--type--${type}">${type}</div>
+            <div class="movement--date">${randomDate()}</div>
+            <div class="movement--value">${value} PLN</div>
+        </div>`;
+
+        historyMovements.insertAdjacentHTML("afterend", html);
+        console.log(html)
+    })
+}
 
 
 
@@ -104,20 +120,4 @@ loginButton.addEventListener("click", function (a) {
 });
 
 
-const renderHistory = function (account) {
-    let type;
-    historyMovements.innerHTML = "";
-    account.history.filter(function (value) {
-        type = value > 0 ? "wpłata" : "wypłata";
-        console.log(type);
-        const html = `<div class="movement">
-            <div class="movement--type--${type}">${type}</div>
-            <div class="movement--date">${randomDate()}</div>
-            <div class="movement--value">${value} PLN</div>
-        </div>`;
-
-        historyMovements.insertAdjacentHTML("afterend", html);
-        console.log(html)
-    })
-}
 
