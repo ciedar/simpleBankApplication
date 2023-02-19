@@ -6,6 +6,10 @@
 }
 
 
+body {
+    background-color: whitesmoke;
+}
+
 
 .main {
     visibility: hidden;
@@ -158,9 +162,6 @@ h1 {
     text-align: center;
 }
 
-.hisotry--h2 {}
-
-
 .history--movements {
     width: 80%;
     margin-right: auto;
@@ -176,4 +177,37 @@ h1 {
 
     display: flex;
     justify-content: space-between;
+}
+
+
+.movement--type--wpłata {
+
+    background-color: #39e75f;
+    font-size: 25px;
+    font-family: sans-serif;
+    border-radius: 20px;
+    width: 10%;
+    font-style: italic;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.movement--type--wypłata {
+
+    background-color: #ff1744;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-style: italic;
+    border-radius: 20px;
+    color: white;
+    width: 10%;
+    text-transform: uppercase;
+}
+
+
+.movement--value {
+    margin-left: 65%;
+    font-weight: bold;
+    font-size: 25px;
 }

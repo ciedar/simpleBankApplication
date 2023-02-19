@@ -18,7 +18,7 @@ const account2 = {
 
 
 
-const listOfHiddenCategories = ["Start", "Przelewy", "Moje Finanse", "Historia", "Usługi", "Dla Ciebie", "Kontakt"];
+const listOfHiddenCategories = ["Start", "Przelewy", "Moje Finanse", "Historia", "Dla Ciebie", "Kontakt"];
 
 
 
@@ -39,15 +39,12 @@ const historyMovements = document.querySelector(".history--movements");
 
 // -----------------------------FUNCTIONS -----------------------
 
-// const renderHistory = function (account) {
-//     let type;
-
-//     account.history.filter(function (value) {
-//         console.log(value)
-//     })
-// }
-
-// renderHistory(currentAccount);
+const randomDate = function () {
+    const a = Math.trunc(Math.random(1) * 31);
+    const b = Math.trunc(Math.random(1) * 12);
+    const c = 2023
+    return `${a}-${b}-${c}`;
+}
 
 
 
@@ -111,15 +108,16 @@ const renderHistory = function (account) {
     let type;
     historyMovements.innerHTML = "";
     account.history.filter(function (value) {
-        type = value > 0 ? "Wpłata" : "Wypłata";
+        type = value > 0 ? "wpłata" : "wypłata";
         console.log(type);
         const html = `<div class="movement">
-            <div class="movement--type">${type}</div>
-            <div class="movement--date">Wczoraj</div>
-            <div class="movement--value">${value}</div>
+            <div class="movement--type--${type}">${type}</div>
+            <div class="movement--date">${randomDate()}</div>
+            <div class="movement--value">${value} PLN</div>
         </div>`;
 
         historyMovements.insertAdjacentHTML("afterend", html);
+        console.log(html)
     })
 }
 
