@@ -6,7 +6,8 @@ const account1 = {
     owner: "Dariusz Cieśla",
     login: "darcie",
     pin: 1111,
-    history: [122, 1698, -129, -872, 76, -50, 5298]
+    history: [122, 1698, -129, -872, 76, -50, 5298],
+    accountNr: "42 1660 1422 1824 2466 1200 0001"
 }
 
 const account2 = {
@@ -34,9 +35,9 @@ const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
 // const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-
+// const modal = document.querySelector(".modal");
+// const overlay = document.querySelector(".overlay");
+// const closeModalBtn = document.querySelector(".close-modal");
 
 // -----------------------------FUNCTIONS -----------------------
 
@@ -134,9 +135,19 @@ loginButton.addEventListener("click", function (a) {
             console.log(a);
             if (a.innerHTML === "Moje Finanse") {
                 const modal = document.createElement("div");
-                modal.classList.add("modal", "hidden");
-                modal.innerHTML = `<button class="close-modal"> ${"&times;"} </button>`;
-                document.body.appendChild(modal);
+                const overlay = document.createElement("div");
+                modal.classList.add("modal");
+                overlay.classList.add("overlay");
+                modal.innerHTML = `<h4>Konto Osobiste ${currentAccount.owner}</h4>
+                <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
+                <p>Saldo: </p>
+                <h3 class="current--balance">${currentAccount.balance} PLN</h3>
+                <button class="close-modal">${"&times;"}</button>
+                `;
+                document.body.append(overlay);
+                document.body.append(modal);
+
+
             }
         })
     })
@@ -144,3 +155,12 @@ loginButton.addEventListener("click", function (a) {
 
 
 
+
+
+
+// const closeModal = function () {
+//     closeModalBtn.addEventListener("click", function () {
+//         overlay.classList.add("hidden");
+//         modal.classList.add("hidden");
+//     })
+// }
