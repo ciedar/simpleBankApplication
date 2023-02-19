@@ -106,35 +106,93 @@ const renderHistory = function (account) {
     })
 }
 
+const createModal = function (innerHTML) {
+    const modal = document.createElement("div");
+    const overlay = document.createElement("div");
+    modal.classList.add("modal");
+    overlay.classList.add("overlay");
+    modal.innerHTML = `${innerHTML}`;
+    document.body.append(overlay);
+    document.body.append(modal);
 
+    overlay.addEventListener("click", function () {
+        overlay.classList.add("hidden-modal");
+        modal.classList.add("hidden-modal");
+    })
+}
 
-const createModal = function () {
+const showModal = function () {
+    let inner;
     hiddenBarStart.forEach(function (a) {
-        a.addEventListener("click", function () {
-            console.log(a);
-            if (a.innerHTML === "Moje Finanse") {
-                const modal = document.createElement("div");
-                const overlay = document.createElement("div");
-                modal.classList.add("modal");
-                overlay.classList.add("overlay");
-                modal.innerHTML = `<h4>Konto Osobiste ${currentAccount.owner}</h4>
+        if (a.innerHTML === "Moje Finanse") {
+            a.addEventListener("click", function () {
+                inner = `<h4>Konto Osobiste ${currentAccount.owner}</h4>
                 <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
                 <p>Saldo: </p>
-                <h3 class="current--balance">${currentAccount.balance} PLN</h3>
-                `;
-                document.body.append(overlay);
-                document.body.append(modal);
+                <h3 class="current--balance">${currentAccount.balance} PLN</h3>`;
+                createModal(inner);
+            })
+        } else if (a.innerHTML === "Kontakt") {
+            a.addEventListener("click", function () {
+                inner = `<h2>Wyślij nam wiadomość </h2>
+                        <div class="contact--us">
+                        <input placeholder="wiadomość"> </input>
+                        <button class="send">Wyślij! </button>
+                        </div>`
+                createModal(inner);
+            })
+        } else if (a.innerHTML === "Przelewy") {
+            a.addEventListener("click", function () {
+                inner = `<div class="transfer">
+                        <div class="transfer--div>
+                        <input type="number"> </input>
+                        <input type="number"> </input>   
+                        <input type="number"> </input>                          
+                        </div>
+                        <div class="p--transfer-div">
+                        <p>Gdzie?</p>
+                        <p>Kwota</p>
+                        </div>
+                        </div>`;
+                createModal(inner);
 
-                overlay.addEventListener("click", function () {
-                    overlay.classList.add("hidden-modal");
-                    modal.classList.add("hidden-modal");
-                })
-
-            }
-        })
+            })
+        } else if (a.innerHTML === "Dla Ciebie") {
+            a.addEventListener("click", function () {
+                inner = `<h2> Opps, niestety nie mamy dla Ciebie żadnej spersonalizowanej oferty :( </h2>`
+                createModal(inner);
+            })
+        }
     })
-
 }
+
+// const createModal = function () {
+//     hiddenBarStart.forEach(function (a) {
+//         a.addEventListener("click", function () {
+//             console.log(a);
+//             if (a.innerHTML === "Moje Finanse") {
+//                 const modal = document.createElement("div");
+//                 const overlay = document.createElement("div");
+//                 modal.classList.add("modal");
+//                 overlay.classList.add("overlay");
+//                 modal.innerHTML = `<h4>Konto Osobiste ${currentAccount.owner}</h4>
+//                 <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
+//                 <p>Saldo: </p>
+//                 <h3 class="current--balance">${currentAccount.balance} PLN</h3>
+//                 `;
+//                 document.body.append(overlay);
+//                 document.body.append(modal);
+
+//                 overlay.addEventListener("click", function () {
+//                     overlay.classList.add("hidden-modal");
+//                     modal.classList.add("hidden-modal");
+//                 })
+
+//             }
+//         })
+//     })
+
+// }
 
 
 
@@ -156,7 +214,7 @@ loginButton.addEventListener("click", function (a) {
         b.style.visibility = "visible";
 
     })
-    createModal();
+    showModal();
 });
 
 
