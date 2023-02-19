@@ -32,12 +32,22 @@ const mainVisable = document.querySelector(".main");
 const navbar = document.querySelector(".nav--bar");
 
 const hiddenBar = document.querySelector(".hidden--bar");
+const historyMovements = document.querySelector(".history--movements");
 
 
 
 
 // -----------------------------FUNCTIONS -----------------------
 
+// const renderHistory = function (account) {
+//     let type;
+
+//     account.history.filter(function (value) {
+//         console.log(value)
+//     })
+// }
+
+// renderHistory(currentAccount);
 
 
 
@@ -92,5 +102,24 @@ loginButton.addEventListener("click", function (a) {
     loginFunction();
     currentBalance(currentAccount);
     hiddenCategories(listOfHiddenCategories);
+    document.querySelector(".history--section").style.visibility = "visible";
+    renderHistory(currentAccount);
 });
+
+
+const renderHistory = function (account) {
+    let type;
+    historyMovements.innerHTML = "";
+    account.history.filter(function (value) {
+        type = value > 0 ? "Wpłata" : "Wypłata";
+        console.log(type);
+        const html = `<div class="movement">
+            <div class="movement--type">${type}</div>
+            <div class="movement--date">Wczoraj</div>
+            <div class="movement--value">${value}</div>
+        </div>`;
+
+        historyMovements.insertAdjacentHTML("afterend", html);
+    })
+}
 

@@ -149,7 +149,7 @@ h1 {
 /* --------- HISTORY-SECTION------------------ */
 
 .history--section {
-    /* visibility: hidden; */
+    visibility: hidden;
     width: 80%;
     height: 250px;
     margin-left: auto;
@@ -165,7 +165,7 @@ h1 {
     width: 80%;
     margin-right: auto;
     margin-left: auto;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .movement {
