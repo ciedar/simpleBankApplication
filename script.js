@@ -41,10 +41,13 @@ const historyMovements = document.querySelector(".history--movements");
 // console.log(logOutBtn)
 
 const logOut = function () {
-    logOutBtn.addEventListener('click', function () {
-        currentAccount = "";
-        mainVisable.style.visibility = "hidden";
-        navbar.style.visibility = "visible";
+    currentAccount = "";
+    mainVisable.style.visibility = "hidden";
+    navbar.style.visibility = "visible";
+    document.querySelector(".history--section").style.visibility = "hidden";
+    document.querySelectorAll(".slow").forEach(function (b) {
+        b.style.visibility = "hidden";
+
     })
 }
 
@@ -179,24 +182,14 @@ const showModal = function () {
 hiddenCategories(listOfHiddenCategories);
 
 const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
-console.log(hiddenBarStart)
 loginButton.addEventListener("click", function (a) {
     const logOutBtn = document.querySelector(".active");
     logOutBtn.addEventListener("click", function () {
-        console.log("dupa kupa");
-        currentAccount = "";
-        mainVisable.style.visibility = "hidden";
-        navbar.style.visibility = "visible";
-        document.querySelector(".history--section").style.visibility = "hidden";
-        document.querySelectorAll(".slow").forEach(function (b) {
-            b.style.visibility = "hidden";
-
-        })
+        logOut();
     })
     a.preventDefault();
     loginFunction();
     currentBalance(currentAccount);
-    // hiddenCategories(listOfHiddenCategories);
     document.querySelector(".history--section").style.visibility = "visible";
     renderHistory(currentAccount);
     document.querySelectorAll(".slow").forEach(function (b) {
