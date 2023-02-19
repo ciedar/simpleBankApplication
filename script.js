@@ -166,35 +166,6 @@ const showModal = function () {
     })
 }
 
-// const createModal = function () {
-//     hiddenBarStart.forEach(function (a) {
-//         a.addEventListener("click", function () {
-//             console.log(a);
-//             if (a.innerHTML === "Moje Finanse") {
-//                 const modal = document.createElement("div");
-//                 const overlay = document.createElement("div");
-//                 modal.classList.add("modal");
-//                 overlay.classList.add("overlay");
-//                 modal.innerHTML = `<h4>Konto Osobiste ${currentAccount.owner}</h4>
-//                 <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
-//                 <p>Saldo: </p>
-//                 <h3 class="current--balance">${currentAccount.balance} PLN</h3>
-//                 `;
-//                 document.body.append(overlay);
-//                 document.body.append(modal);
-
-//                 overlay.addEventListener("click", function () {
-//                     overlay.classList.add("hidden-modal");
-//                     modal.classList.add("hidden-modal");
-//                 })
-
-//             }
-//         })
-//     })
-
-// }
-
-
 
 // ---------------------------------------- CODE--------------------------------
 
