@@ -33,11 +33,15 @@ const navbar = document.querySelector(".nav--bar");
 const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
-
-
+// const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
 
 
 // -----------------------------FUNCTIONS -----------------------
+
+
+
 
 const randomDate = function () {
     const a = Math.trunc(Math.random(1) * 31);
@@ -75,10 +79,11 @@ const hiddenCategories = function (list) {
     let category
     hiddenBar.innerHTML = "";
     for (let i = 0; i < listOfHiddenCategories.length; i++) {
-        category = listOfHiddenCategories[i] === "Wyloguj" ? `<button class="hidden-bar-start active">${listOfHiddenCategories[i]}</button>` : `<a href="#" class="hidden-bar-start">${listOfHiddenCategories[i]}</a>`;
+        const div = document.createElement('div');
+        div.innerHTML = listOfHiddenCategories[i] === "Wyloguj" ? `<button class="hidden-bar-start active slow">${listOfHiddenCategories[i]}</button>` : `<a href="#" class="hidden-bar-start slow">${listOfHiddenCategories[i]}</a>`;
         // `<a href="#" class="hidden-bar-start">${listOfHiddenCategories[i]}</a>`;
-        console.log(category);
-        hiddenBar.insertAdjacentHTML("beforeend", category);
+        // console.log(category);
+        hiddenBar.appendChild(div);
     }
 }
 
@@ -106,22 +111,33 @@ const renderHistory = function (account) {
 
 
 
-
 // ---------------------------------------- CODE--------------------------------
 
 
+hiddenCategories(listOfHiddenCategories);
 
 loginButton.addEventListener("click", function (a) {
+    const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
+
     a.preventDefault();
     loginFunction();
     currentBalance(currentAccount);
-    hiddenCategories(listOfHiddenCategories);
+    // hiddenCategories(listOfHiddenCategories);
     document.querySelector(".history--section").style.visibility = "visible";
     renderHistory(currentAccount);
+    document.querySelectorAll(".slow").forEach(function (b) {
+        b.style.visibility = "visible";
+    })
 
-    document.querySelectorAll(".hidden-bar-start").forEach(function (a) {
-        a.addEventListener("click", function (b) {
-            console.log(b.target);
+    hiddenBarStart.forEach(function (a) {
+        a.addEventListener("click", function () {
+            console.log(a);
+            if (a.innerHTML === "Moje Finanse") {
+                const modal = document.createElement("div");
+                modal.classList.add("modal", "hidden");
+                modal.innerHTML = `<button class="close-modal"> ${"&times;"} </button>`;
+                document.body.appendChild(modal);
+            }
         })
     })
 });
