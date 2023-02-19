@@ -3,11 +3,13 @@
     padding: 0;
 
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 
 body {
     background-color: whitesmoke;
+
 }
 
 
@@ -24,7 +26,14 @@ button {
     cursor: pointer;
 }
 
-
+p,
+h1,
+h2,
+h3,
+h4,
+a {
+    font-family: sans-serif;
+}
 
 /* -------------------------NAV BAR---------------------------- */
 
@@ -110,16 +119,22 @@ h1 {
 
 }
 
+.active {
+    font-weight: bold;
+    border: solid 1px;
+    width: 20%;
+    text-align: center;
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
 
-/* 
-.profile {
-    border-radius: 50px;
-    height: 45px;
-    width: 45px;
-    border: green solid 1px;
-    visibility: collapse;
-} */
 
+.hidden--bar a:hover {
+    font-weight: bold;
+}
+
+.hidden--bar button:hover {
+    color: white;
+}
 
 
 

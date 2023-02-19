@@ -18,7 +18,7 @@ const account2 = {
 
 
 
-const listOfHiddenCategories = ["Start", "Przelewy", "Moje Finanse", "Historia", "Dla Ciebie", "Kontakt"];
+const listOfHiddenCategories = ["Wyloguj", "Przelewy", "Moje Finanse", "Historia", "Dla Ciebie", "Kontakt"];
 
 
 
@@ -72,10 +72,11 @@ const loginFunction = function () {
 
 
 const hiddenCategories = function (list) {
-
+    let category
     hiddenBar.innerHTML = "";
     for (let i = 0; i < listOfHiddenCategories.length; i++) {
-        const category = `<a href="#" class="hidden-bar-start">${listOfHiddenCategories[i]}</a>`;
+        category = listOfHiddenCategories[i] === "Wyloguj" ? `<button class="hidden-bar-start active">${listOfHiddenCategories[i]}</button>` : `<a href="#" class="hidden-bar-start">${listOfHiddenCategories[i]}</a>`;
+        // `<a href="#" class="hidden-bar-start">${listOfHiddenCategories[i]}</a>`;
         console.log(category);
         hiddenBar.insertAdjacentHTML("beforeend", category);
     }
@@ -117,6 +118,12 @@ loginButton.addEventListener("click", function (a) {
     hiddenCategories(listOfHiddenCategories);
     document.querySelector(".history--section").style.visibility = "visible";
     renderHistory(currentAccount);
+
+    document.querySelectorAll(".hidden-bar-start").forEach(function (a) {
+        a.addEventListener("click", function (b) {
+            console.log(b.target);
+        })
+    })
 });
 
 
