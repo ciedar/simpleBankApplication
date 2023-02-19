@@ -98,7 +98,7 @@ const renderHistory = function (account) {
         const html = `<div class="movement">
             <div class="movement--type--${type}">${type}</div>
             <div class="movement--date">${randomDate()}</div>
-            <div class="movement--value">${value} PLN</div>
+            <div class="movement--value">${value} <span class="pln">PLN</span></div>
         </div>`;
 
         historyMovements.insertAdjacentHTML("afterend", html);
