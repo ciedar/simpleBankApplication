@@ -34,13 +34,19 @@ const navbar = document.querySelector(".nav--bar");
 const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
-// const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
-// const modal = document.querySelector(".modal");
-// const overlay = document.querySelector(".overlay");
-// const closeModalBtn = document.querySelector(".close-modal");
+
+
 
 // -----------------------------FUNCTIONS -----------------------
+// console.log(logOutBtn)
 
+const logOut = function () {
+    logOutBtn.addEventListener('click', function () {
+        currentAccount = "";
+        mainVisable.style.visibility = "hidden";
+        navbar.style.visibility = "visible";
+    })
+}
 
 
 
@@ -175,6 +181,18 @@ hiddenCategories(listOfHiddenCategories);
 const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
 console.log(hiddenBarStart)
 loginButton.addEventListener("click", function (a) {
+    const logOutBtn = document.querySelector(".active");
+    logOutBtn.addEventListener("click", function () {
+        console.log("dupa kupa");
+        currentAccount = "";
+        mainVisable.style.visibility = "hidden";
+        navbar.style.visibility = "visible";
+        document.querySelector(".history--section").style.visibility = "hidden";
+        document.querySelectorAll(".slow").forEach(function (b) {
+            b.style.visibility = "hidden";
+
+        })
+    })
     a.preventDefault();
     loginFunction();
     currentBalance(currentAccount);
@@ -186,6 +204,7 @@ loginButton.addEventListener("click", function (a) {
 
     })
     showModal();
+
 });
 
 
@@ -193,9 +212,5 @@ loginButton.addEventListener("click", function (a) {
 
 
 
-// const closeModal = function () {
-//     closeModalBtn.addEventListener("click", function () {
-//         overlay.classList.add("hidden");
-//         modal.classList.add("hidden");
-//     })
-// }
+
+
