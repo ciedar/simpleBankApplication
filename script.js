@@ -108,28 +108,7 @@ const renderHistory = function (account) {
 
 
 
-
-
-
-
-// ---------------------------------------- CODE--------------------------------
-
-
-hiddenCategories(listOfHiddenCategories);
-
-loginButton.addEventListener("click", function (a) {
-    const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
-
-    a.preventDefault();
-    loginFunction();
-    currentBalance(currentAccount);
-    // hiddenCategories(listOfHiddenCategories);
-    document.querySelector(".history--section").style.visibility = "visible";
-    renderHistory(currentAccount);
-    document.querySelectorAll(".slow").forEach(function (b) {
-        b.style.visibility = "visible";
-    })
-
+const createModal = function () {
     hiddenBarStart.forEach(function (a) {
         a.addEventListener("click", function () {
             console.log(a);
@@ -142,15 +121,42 @@ loginButton.addEventListener("click", function (a) {
                 <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
                 <p>Saldo: </p>
                 <h3 class="current--balance">${currentAccount.balance} PLN</h3>
-                <button class="close-modal">${"&times;"}</button>
                 `;
                 document.body.append(overlay);
                 document.body.append(modal);
 
+                overlay.addEventListener("click", function () {
+                    overlay.classList.add("hidden-modal");
+                    modal.classList.add("hidden-modal");
+                })
 
             }
         })
     })
+
+}
+
+
+
+// ---------------------------------------- CODE--------------------------------
+
+
+hiddenCategories(listOfHiddenCategories);
+
+const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
+console.log(hiddenBarStart)
+loginButton.addEventListener("click", function (a) {
+    a.preventDefault();
+    loginFunction();
+    currentBalance(currentAccount);
+    // hiddenCategories(listOfHiddenCategories);
+    document.querySelector(".history--section").style.visibility = "visible";
+    renderHistory(currentAccount);
+    document.querySelectorAll(".slow").forEach(function (b) {
+        b.style.visibility = "visible";
+
+    })
+    createModal();
 });
 
 
