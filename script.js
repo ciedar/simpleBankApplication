@@ -35,6 +35,12 @@ const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
 
+let modalTransferBtn;
+
+// modalTransferBtn.addEventListener('click', function () {
+//     console.log("sadasd");
+// })
+
 
 
 // -----------------------------FUNCTIONS -----------------------
@@ -159,6 +165,10 @@ const showModal = function () {
                         </div>
                         </div>`;
                 createModal(inner);
+                modalTransferBtn = document.querySelector(".transfer--btn");
+                modalTransferBtn.addEventListener("click", function () {
+                    console.log("Hey i'm work");
+                })
 
             })
         } else if (a.innerHTML === "Dla Ciebie") {
@@ -202,5 +212,10 @@ loginButton.addEventListener("click", function (a) {
 
     })
     showModal();
+
+
+    // const modalTransferBtn = document.querySelector(".transfer--btn");
+
+
 
 });
