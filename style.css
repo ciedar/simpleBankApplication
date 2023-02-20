@@ -306,11 +306,11 @@ h1 {
     width: 100%;
     height: 150%;
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     z-index: 5;
 }
 
-.close-modal {
+/* .close-modal {
     position: absolute;
     top: 1.2rem;
     right: 2rem;
@@ -319,4 +319,45 @@ h1 {
     cursor: pointer;
     border: none;
     background: none;
+} */
+
+/* TRANSFER MODAL */
+
+.transfer-- {
+    border-radius: 1rem;
+    padding: 3rem 4rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.transfer--input {
+    text-align: center;
+    justify-content: space-evenly;
+    width: 100%;
+    font-weight: bold;
+    font-size: 17px;
+
+    border: black 1px solid;
+}
+
+.transfer--div {
+
+    display: flex;
+    gap: 25px;
+    margin-top: 2rem;
+
+}
+
+.transfer--btn {
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.8rem;
+    background-color: #39e75f;
+    width: 3.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    text-align: center;
 }

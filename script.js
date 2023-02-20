@@ -41,13 +41,10 @@ const historyMovements = document.querySelector(".history--movements");
 // console.log(logOutBtn)
 
 const logOut = function () {
-    currentAccount = "";
-    mainVisable.style.visibility = "hidden";
-    navbar.style.visibility = "visible";
-    document.querySelector(".history--section").style.visibility = "hidden";
-    document.querySelectorAll(".slow").forEach(function (b) {
-        b.style.visibility = "hidden";
-
+    logOutBtn.addEventListener('click', function () {
+        currentAccount = "";
+        mainVisable.style.visibility = "hidden";
+        navbar.style.visibility = "visible";
     })
 }
 
@@ -152,15 +149,12 @@ const showModal = function () {
             })
         } else if (a.innerHTML === "Przelewy") {
             a.addEventListener("click", function () {
-                inner = `<div class="transfer">
-                        <div class="transfer--div>
-                        <input type="number"> </input>
-                        <input type="number"> </input>   
-                        <input type="number"> </input>                          
-                        </div>
-                        <div class="p--transfer-div">
-                        <p>Gdzie?</p>
-                        <p>Kwota</p>
+                inner = `<div class="transfer--">
+                        <h2> Przelew krajowy </h2>
+                        <div class="transfer--div">
+                        <input class="transfer--input" type="number" placeholder="Numer Konta"> </input>
+                        <input class="transfer--input" type="number" placeholder="Kwota"> </input>
+                        <button class="transfer--btn"> > </button>                             
                         </div>
                         </div>`;
                 createModal(inner);
@@ -182,14 +176,24 @@ const showModal = function () {
 hiddenCategories(listOfHiddenCategories);
 
 const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
+console.log(hiddenBarStart)
 loginButton.addEventListener("click", function (a) {
     const logOutBtn = document.querySelector(".active");
     logOutBtn.addEventListener("click", function () {
-        logOut();
+        console.log("dupa kupa");
+        currentAccount = "";
+        mainVisable.style.visibility = "hidden";
+        navbar.style.visibility = "visible";
+        document.querySelector(".history--section").style.visibility = "hidden";
+        document.querySelectorAll(".slow").forEach(function (b) {
+            b.style.visibility = "hidden";
+
+        })
     })
     a.preventDefault();
     loginFunction();
     currentBalance(currentAccount);
+    // hiddenCategories(listOfHiddenCategories);
     document.querySelector(".history--section").style.visibility = "visible";
     renderHistory(currentAccount);
     document.querySelectorAll(".slow").forEach(function (b) {
@@ -199,11 +203,3 @@ loginButton.addEventListener("click", function (a) {
     showModal();
 
 });
-
-
-
-
-
-
-
-
