@@ -361,3 +361,43 @@ h1 {
     color: white;
     text-align: center;
 }
+
+
+
+/* CONTACT MODAL */
+
+.contact--us {
+    border-radius: 1rem;
+    padding: 3rem 4rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.send--btn {
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.2rem;
+    background-color: #39e75f;
+    width: 6rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    text-align: center;
+}
+
+.send--us-input {
+    width: 50%;
+    height: 50px;
+    margin-left: 2.5rem;
+    margin-top: 15px;
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 17px;
+
+    border: black 1px solid;
+    border-radius: 20px;
+}

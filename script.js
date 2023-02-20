@@ -140,10 +140,11 @@ const showModal = function () {
             })
         } else if (a.innerHTML === "Kontakt") {
             a.addEventListener("click", function () {
-                inner = `<h2>Wyślij nam wiadomość </h2>
+                inner = `
                         <div class="contact--us">
-                        <input placeholder="wiadomość"> </input>
-                        <button class="send">Wyślij! </button>
+                        <h2>Wyślij nam wiadomość </h2>
+                        <input placeholder="wiadomość" class="send--us-input"> </input>
+                        <button class="send--btn">Wyślij! </button>
                         </div>`
                 createModal(inner);
             })
