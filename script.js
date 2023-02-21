@@ -34,6 +34,8 @@ const navbar = document.querySelector(".nav--bar");
 const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
+const transferBtn = document.querySelector(".transfer");
+
 
 
 
@@ -209,6 +211,18 @@ const logOutBtn = document.querySelector(".active");
 loginButton.addEventListener("click", function (a) {
     a.preventDefault();
     loginFunction();
+    transferBtn.addEventListener("click", function () {
+        let inner = `<div class="transfer--">
+                        <h2> Przelew krajowy </h2>
+                        <div class="transfer--div">
+                        <input class="transfer--input" type="number" placeholder="Numer Konta"> </input>
+                        <input class="transfer--input" type="number" placeholder="Kwota"> </input>
+                        <button class="transfer--btn"> > </button>                             
+                        </div>
+                        </div>`;
+        createModal(inner);
+
+    })
 
 });
 
