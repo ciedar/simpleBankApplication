@@ -37,16 +37,11 @@ const historyMovements = document.querySelector(".history--movements");
 
 
 
-// -----------------------------FUNCTIONS -----------------------
-// console.log(logOutBtn)
 
-const logOut = function () {
-    logOutBtn.addEventListener('click', function () {
-        currentAccount = "";
-        mainVisable.style.visibility = "hidden";
-        navbar.style.visibility = "visible";
-    })
-}
+// -----------------------------FUNCTIONS -----------------------
+
+
+
 
 
 
@@ -70,17 +65,34 @@ const currentBalance = function (account) {
 
 
 const loginFunction = function () {
-    // listOfAccounts.find(function (current) {
-    //     if (loginInput.value === current.login & Number(passwordInput.value) === current.pin) {
-    //         currentAccount = current;
-    //         console.log(currentAccount);
-    mainVisable.style.visibility = "visible";
-    navbar.style.visibility = "hidden";
+    listOfAccounts.find(function (current) {
+        if (loginInput.value === current.login & Number(passwordInput.value) === current.pin) {
+            currentAccount = current;
+            console.log(currentAccount);
+            mainVisable.style.visibility = "visible";
+            navbar.style.visibility = "hidden";
+        }
+
+    })
+    currentBalance(currentAccount);
+    renderHistory(currentAccount);
+    document.querySelector(".history--section").style.visibility = "visible";
+    hiddenNavBarOn();
 }
 
-//     })
-// }
+const hiddenNavBarOn = function () {
+    document.querySelectorAll(".slow").forEach(function (b) {
+        b.style.visibility = `visible`;
 
+    })
+}
+
+const hiddenNavBarOff = function () {
+    document.querySelectorAll(".slow").forEach(function (b) {
+        b.style.visibility = `hidden`;
+
+    })
+}
 
 const hiddenCategories = function (list) {
     let category
@@ -170,53 +182,36 @@ const showModal = function () {
 }
 
 
-// ---------------------------------------- CODE--------------------------------
-let logged = 0;
 
-hiddenCategories(listOfHiddenCategories);
-const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
-
-
-loginButton.addEventListener("click", function (a) {
-    a.preventDefault();
-    currentAccount = listOfAccounts.find(function (account) {
-        return account.login === loginInput.value
-    })
-
-    if (currentAccount?.pin === Number(passwordInput.value)) {
+function logOutFunction() {
+    logOutBtn.addEventListener("click", function () {
+        currentAccount = {};
+        const movs = document.querySelectorAll(".movement")
+        movs.forEach(function (a) {
+            a.remove();
+        })
         console.log(currentAccount);
-    }
-    loginFunction();
-    currentBalance(currentAccount);
-    renderHistory(currentAccount);
-
-    document.querySelector(".history--section").style.visibility = "visible";
-    document.querySelectorAll(".slow").forEach(function (b) {
-        b.style.visibility = "visible";
-
+        mainVisable.style.visibility = "hidden";
+        navbar.style.visibility = "visible";
+        document.querySelector(".history--section").style.visibility = "hidden";
+        hiddenNavBarOff();
     })
 }
 
 
-);
+// ---------------------------------------- CODE--------------------------------
 
-showModal();
-
-
-
+hiddenCategories(listOfHiddenCategories);
+const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
 const logOutBtn = document.querySelector(".active");
-logOutBtn.addEventListener("click", function () {
-    currentAccount = {};
-    const movs = document.querySelectorAll(".movement")
-    movs.forEach(function (a) {
-        a.remove();
-    })
-    console.log(currentAccount);
-    mainVisable.style.visibility = "hidden";
-    navbar.style.visibility = "visible";
-    document.querySelector(".history--section").style.visibility = "hidden";
-    document.querySelectorAll(".slow").forEach(function (b) {
-        b.style.visibility = "hidden";
 
-    })
-})
+
+loginButton.addEventListener("click", function (a) {
+    a.preventDefault();
+    loginFunction();
+
+});
+
+showModal()
+logOutFunction();
+
