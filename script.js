@@ -35,12 +35,6 @@ const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
 
-let modalTransferBtn;
-
-// modalTransferBtn.addEventListener('click', function () {
-//     console.log("sadasd");
-// })
-
 
 
 // -----------------------------FUNCTIONS -----------------------
@@ -76,16 +70,16 @@ const currentBalance = function (account) {
 
 
 const loginFunction = function () {
-    listOfAccounts.find(function (current) {
-        if (loginInput.value === current.login & Number(passwordInput.value) === current.pin) {
-            currentAccount = current;
-            console.log(currentAccount);
-            mainVisable.style.visibility = "visible";
-            navbar.style.visibility = "hidden";
-        }
-
-    })
+    // listOfAccounts.find(function (current) {
+    //     if (loginInput.value === current.login & Number(passwordInput.value) === current.pin) {
+    //         currentAccount = current;
+    //         console.log(currentAccount);
+    mainVisable.style.visibility = "visible";
+    navbar.style.visibility = "hidden";
 }
+
+//     })
+// }
 
 
 const hiddenCategories = function (list) {
@@ -106,7 +100,6 @@ const renderHistory = function (account) {
     historyMovements.innerHTML = "";
     account.history.filter(function (value) {
         type = value > 0 ? "wpłata" : "wypłata";
-        console.log(type);
         const html = `<div class="movement">
             <div class="movement--type--${type}">${type}</div>
             <div class="movement--date">${randomDate()}</div>
@@ -114,7 +107,7 @@ const renderHistory = function (account) {
         </div>`;
 
         historyMovements.insertAdjacentHTML("afterend", html);
-        console.log(html)
+        // console.log(html)
     })
 }
 
@@ -165,10 +158,6 @@ const showModal = function () {
                         </div>
                         </div>`;
                 createModal(inner);
-                modalTransferBtn = document.querySelector(".transfer--btn");
-                modalTransferBtn.addEventListener("click", function () {
-                    console.log("Hey i'm work");
-                })
 
             })
         } else if (a.innerHTML === "Dla Ciebie") {
@@ -182,40 +171,52 @@ const showModal = function () {
 
 
 // ---------------------------------------- CODE--------------------------------
-
+let logged = 0;
 
 hiddenCategories(listOfHiddenCategories);
-
 const hiddenBarStart = document.querySelectorAll(".hidden-bar-start");
-console.log(hiddenBarStart)
-loginButton.addEventListener("click", function (a) {
-    const logOutBtn = document.querySelector(".active");
-    logOutBtn.addEventListener("click", function () {
-        console.log("dupa kupa");
-        currentAccount = "";
-        mainVisable.style.visibility = "hidden";
-        navbar.style.visibility = "visible";
-        document.querySelector(".history--section").style.visibility = "hidden";
-        document.querySelectorAll(".slow").forEach(function (b) {
-            b.style.visibility = "hidden";
 
-        })
-    })
+
+loginButton.addEventListener("click", function (a) {
     a.preventDefault();
+    currentAccount = listOfAccounts.find(function (account) {
+        return account.login === loginInput.value
+    })
+
+    if (currentAccount?.pin === Number(passwordInput.value)) {
+        console.log(currentAccount);
+    }
     loginFunction();
     currentBalance(currentAccount);
-    // hiddenCategories(listOfHiddenCategories);
-    document.querySelector(".history--section").style.visibility = "visible";
     renderHistory(currentAccount);
+
+    document.querySelector(".history--section").style.visibility = "visible";
     document.querySelectorAll(".slow").forEach(function (b) {
         b.style.visibility = "visible";
 
     })
-    showModal();
+}
 
 
-    // const modalTransferBtn = document.querySelector(".transfer--btn");
+);
+
+showModal();
 
 
 
-});
+const logOutBtn = document.querySelector(".active");
+logOutBtn.addEventListener("click", function () {
+    currentAccount = {};
+    const movs = document.querySelectorAll(".movement")
+    movs.forEach(function (a) {
+        a.remove();
+    })
+    console.log(currentAccount);
+    mainVisable.style.visibility = "hidden";
+    navbar.style.visibility = "visible";
+    document.querySelector(".history--section").style.visibility = "hidden";
+    document.querySelectorAll(".slow").forEach(function (b) {
+        b.style.visibility = "hidden";
+
+    })
+})
