@@ -14,7 +14,9 @@ const account2 = {
     owner: "Mateusz Woś",
     login: "matwos",
     pin: 2222,
-    history: [122, 168, -129, -82, 76, -508, 298]
+    history: [122, 168, -129, -82, 76, -508, 298],
+    accountNr: 12112019921824226612600001
+
 }
 
 
@@ -73,6 +75,7 @@ const loginFunction = function () {
             console.log(currentAccount);
             mainVisable.style.visibility = "visible";
             navbar.style.visibility = "hidden";
+            document.querySelector(".personal--account-nr").innerHTML = `${currentAccount.accountNr}`
         }
 
     })
@@ -166,13 +169,33 @@ const showModal = function () {
                 inner = `<div class="transfer--">
                         <h2> Przelew krajowy </h2>
                         <div class="transfer--div">
-                        <input class="transfer--input" type="number" placeholder="Numer Konta"> </input>
-                        <input class="transfer--input" type="number" placeholder="Kwota"> </input>
+                        <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
+                        <input class="transfer--input-amount" type="number" placeholder="Kwota"> </input>
                         <button class="transfer--btn"> > </button>                             
                         </div>
                         </div>`;
                 createModal(inner);
 
+                function transferMoney() {
+                    const transferButton = document.querySelector(".transfer--btn")
+                    const whereTransferInput = document.querySelector(".transfer--input-where");
+                    const amountTransferInput = document.querySelector(".transfer--input-amount");
+                    transferButton.addEventListener("click", function () {
+                        const where = listOfAccounts.find(function (acc) {
+                            return acc.accountNr === Number(whereTransferInput.value)
+                        })
+                        if (currentAccount.balance >= Number(amountTransferInput.value) && currentAccount.accountNr != where.accountNr) {
+                            currentAccount.history.push(Number(-amountTransferInput.value));
+                            where.history.push(Number(amountTransferInput.value))
+                            currentBalance(currentAccount);
+                            renderHistory(currentAccount);
+                        }
+
+
+
+                    })
+                }
+                transferMoney()
             })
         } else if (a.innerHTML === "Dla Ciebie") {
             a.addEventListener("click", function () {
@@ -223,6 +246,8 @@ loginButton.addEventListener("click", function (a) {
         createModal(inner);
 
     })
+
+    // console.log(transferButton);
 
 });
 
