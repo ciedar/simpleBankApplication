@@ -187,6 +187,10 @@ const showModal = function () {
                         if (currentAccount.balance >= Number(amountTransferInput.value) && currentAccount.accountNr != where.accountNr) {
                             currentAccount.history.push(Number(-amountTransferInput.value));
                             where.history.push(Number(amountTransferInput.value))
+                            const movs = document.querySelectorAll(".movement")
+                            movs.forEach(function (a) {
+                                a.remove();
+                            })
                             currentBalance(currentAccount);
                             renderHistory(currentAccount);
                         }
