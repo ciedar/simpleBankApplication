@@ -332,7 +332,17 @@ h1 {
     text-align: center;
 }
 
-.transfer--input {
+.transfer--input-where {
+    text-align: center;
+    justify-content: space-evenly;
+    width: 100%;
+    font-weight: bold;
+    font-size: 17px;
+
+    border: black 1px solid;
+}
+
+.transfer--input-amount {
     text-align: center;
     justify-content: space-evenly;
     width: 100%;
