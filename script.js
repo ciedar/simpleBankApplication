@@ -194,9 +194,6 @@ const showModal = function () {
                             currentBalance(currentAccount);
                             renderHistory(currentAccount);
                         }
-
-
-
                     })
                 }
                 transferMoney()
@@ -219,7 +216,7 @@ function logOutFunction() {
         movs.forEach(function (a) {
             a.remove();
         })
-        console.log(currentAccount);
+        // console.log(currentAccount);
         mainVisable.style.visibility = "hidden";
         navbar.style.visibility = "visible";
         document.querySelector(".history--section").style.visibility = "hidden";
