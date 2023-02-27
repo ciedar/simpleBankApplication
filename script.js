@@ -7,7 +7,7 @@ const account1 = {
     login: "darcie",
     pin: 1111,
     history: [122, 1698, -129, -872, 76, -50, 5298],
-    accountNr: "42 1660 1422 1824 2466 1200 0001"
+    accountNr: BigInt(42166014221824246612000001)
 }
 
 const account2 = {
@@ -15,7 +15,7 @@ const account2 = {
     login: "matwos",
     pin: 2222,
     history: [122, 168, -129, -82, 76, -508, 298],
-    accountNr: 12112019921824226612600001
+    accountNr: BigInt(12112019921824226612600001)
 
 }
 
