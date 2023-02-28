@@ -254,4 +254,5 @@ loginButton.addEventListener("click", function (a) {
 
 showModal()
 logOutFunction();
+console.log("tak");
 
