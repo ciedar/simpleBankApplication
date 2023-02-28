@@ -195,14 +195,14 @@ h1 {
 }
 
 .transfer,
-.zloz,
-.zloz--0 {
+.zloz--0,
+.zloz--1 {
     align-items: flex-end;
     margin-top: 25px;
 }
 
-.zloz,
-.zloz--0 {
+.zloz--0,
+.zloz--1 {
     background-image: linear-gradient(to top left, #39b385, #9be15d);
     border: transparent;
     width: 50%;

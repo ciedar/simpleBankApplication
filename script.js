@@ -37,6 +37,8 @@ const hiddenProfile = document.querySelector(".hidden--after");
 const hiddenBar = document.querySelector(".hidden--bar");
 const historyMovements = document.querySelector(".history--movements");
 const transferBtn = document.querySelector(".transfer");
+const zloz0 = document.querySelector(".zloz--0");
+const zloz1 = document.querySelector(".zloz--1");
 
 
 
@@ -235,12 +237,37 @@ const logOutBtn = document.querySelector(".active");
 loginButton.addEventListener("click", function (a) {
     a.preventDefault();
     loginFunction();
+    zloz0.addEventListener("click", function () {
+        let inner = `<div class="credit--card">
+        <h2> Wniosek o karte kredtytowa </h2>
+        <div class="credit--card--div">
+        <h3> Parametry karty </h3>
+        <img src="img/classic.jpg" class="credtit-card">
+        <div class="credit--limit--div">
+        <p> Wnioskowany limit na karcie </p>
+        <input type="number" placeholder="kwota" class="credit"></input>
+        </div>
+        <form>
+        <h3> Dzień spłaty karty </h3>
+            <input type="checkbox" id="date1" name="name1">
+            <label for="date1">1</label><br>
+            <input type="checkbox" id="date2" name="name2">
+            <label for="date2">10</label><br>
+            <input type="checkbox" id="date3" name="name3">
+            <label for="date3">20</label>
+        </form>
+        <button class="transfer--btn"> > </button>                             
+        </div>
+        </div>`;
+        createModal(inner);
+
+    })
     transferBtn.addEventListener("click", function () {
         let inner = `<div class="transfer--">
                         <h2> Przelew krajowy </h2>
                         <div class="transfer--div">
-                        <input class="transfer--input" type="number" placeholder="Numer Konta"> </input>
-                        <input class="transfer--input" type="number" placeholder="Kwota"> </input>
+                        <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
+                        <input class="transfer--input-amount" type="number" placeholder="Kwota"> </input>
                         <button class="transfer--btn"> > </button>                             
                         </div>
                         </div>`;
@@ -248,7 +275,7 @@ loginButton.addEventListener("click", function (a) {
 
     })
 
-    // console.log(transferButton);
+
 
 });
 
