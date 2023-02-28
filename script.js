@@ -240,7 +240,7 @@ loginButton.addEventListener("click", function (a) {
     zloz0.addEventListener("click", function () {
         let inner = `<div class="credit--card">
         <div class="credit--card--div">
-        <h2 class="credit--card-h"> Wniosek o karte kredtytowa </h2>
+        <h2 class="credit--card-h"> Wniosek o karte kredytowa </h2>
         <div class="testt">
         <h3> Parametry karty </h3>
         </div>
@@ -258,7 +258,7 @@ loginButton.addEventListener("click", function (a) {
             <input type="checkbox" id="date3" class="check--credit">
             <label for="date3" class="check--credit" >20</label>
         </form>
-        <button class="credit--btn"> > </button>                             
+        <button class="credit--btn"> Wyślij wniosek </button>                             
         </div>
         </div>`;
         createModal(inner);

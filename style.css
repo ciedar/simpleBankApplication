@@ -424,7 +424,20 @@ h1 {
 
 .check--credit {
     border-radius: 18px;
-    /* width: 10px; */
+    height: 20px;
+    margin-top: 10px;
+    /* font-weight: bold; */
+}
+
+.credit--btn {
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+    border: transparent;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25px;
+    width: 150px;
 }
 
 .credit--card {
@@ -469,14 +482,21 @@ h1 {
     justify-content: space-between;
     /* padding-left: 90px; */
     margin-top: 25px;
+    padding-bottom: 25px;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     height: 50px;
     align-items: center;
+    border-bottom: #39b385 1px solid;
 }
 
 .credit {
-    height: 100px;
+    height: 40px;
+    border-radius: 18px;
+    border: #39b385 1px solid;
+    text-align: center;
+    font-weight: bold;
+
 }
