@@ -26,6 +26,7 @@ body {
 
 button {
     cursor: pointer;
+    /* background-image: linear-gradient(to top left, #39b385, #9be15d); */
 }
 
 button:hover {
@@ -330,11 +331,17 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #39e75f; */
+    width: 550px;
+    height: 500px;
+    gap: 25px;
 }
 
 .transfer--input-where {
     text-align: center;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     width: 100%;
     font-weight: bold;
     font-size: 17px;
@@ -354,9 +361,9 @@ h1 {
 
 .transfer--div {
 
-    display: flex;
+    /* display: flex; */
     gap: 25px;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 
 }
 
@@ -364,15 +371,40 @@ h1 {
     border: none;
     border-radius: 0.7rem;
     font-size: 1.8rem;
-    background-color: #39e75f;
-    width: 3.5rem;
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+    width: 4.5rem;
+    height: 2rem;
     cursor: pointer;
     transition: all 0.3s;
     color: white;
     text-align: center;
+
+
+    margin-top: 2rem;
 }
 
 
+.transfer--from-acc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: flex-start; */
+
+
+
+    border: #39e75f 1px solid;
+    padding: 12px;
+}
+
+
+.transfer--div-where,
+.transfer--div-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 2rem;
+}
 
 /* CONTACT MODAL */
 

@@ -169,10 +169,22 @@ const showModal = function () {
         } else if (a.innerHTML === "Przelewy") {
             a.addEventListener("click", function () {
                 inner = `<div class="transfer--">
-                        <h2> Przelew krajowy </h2>
+                        <h2> Przelew krajowy z </h2>
+                        <div class="transfer--from-acc">
+                        <h4>Konto Osobiste ${currentAccount.owner}</h4>
+                        <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
+                        <p>Saldo: </p>
+                        <h3>${currentAccount.balance} PLN</h3>
+                        </div>
                         <div class="transfer--div">
+                        <div class="transfer--div-where">
+                        <p>Numer rachunku odbiorcy</p>
                         <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
+                        </div>
+                        <div class="transfer--div-amount">
+                        <p>Kwota</p>
                         <input class="transfer--input-amount" type="number" placeholder="Kwota"> </input>
+                        </div>
                         <button class="transfer--btn"> > </button>                             
                         </div>
                         </div>`;
@@ -247,7 +259,7 @@ loginButton.addEventListener("click", function (a) {
         <img src="img/cover.jpg" class="credit-card">
         <div class="credit--limit--div">
         <p> Wnioskowany limit na karcie </p>
-        <input type="number" placeholder="kwota" class="credit"></input>
+        <input type="number" placeholder="kwota" class="credit" value="30 000"></input>
         </div>
         <form class="cc">
         <h3> Dzień spłaty karty </h3>
@@ -266,13 +278,25 @@ loginButton.addEventListener("click", function (a) {
     })
     transferBtn.addEventListener("click", function () {
         let inner = `<div class="transfer--">
-                        <h2> Przelew krajowy </h2>
-                        <div class="transfer--div">
-                        <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
-                        <input class="transfer--input-amount" type="number" placeholder="Kwota"> </input>
-                        <button class="transfer--btn"> > </button>                             
-                        </div>
-                        </div>`;
+        <h2> Przelew krajowy z </h2>
+        <div class="transfer--from-acc">
+        <h4>Konto Osobiste ${currentAccount.owner}</h4>
+        <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
+        <p>Saldo: </p>
+        <h3>${currentAccount.balance} PLN</h3>
+        </div>
+        <div class="transfer--div">
+        <div class="transfer--div-where">
+        <p>Numer rachunku odbiorcy</p>
+        <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
+        </div>
+        <div class="transfer--div-amount">
+        <p>Kwota</p>
+        <input class="transfer--input-amount" type="number" placeholder="Kwota"> </input>
+        </div>
+        <button class="transfer--btn"> > </button>                             
+        </div>
+        </div>`;
         createModal(inner);
 
     })
