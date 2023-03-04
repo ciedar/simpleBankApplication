@@ -10,8 +10,7 @@
 
 
 body {
-    background-color: whitesmoke;
-
+    /* background-image: linear-gradient(to top right, #88d6bb) */
 }
 
 
@@ -19,7 +18,7 @@ body {
     visibility: hidden;
     width: 100%;
     height: 300px;
-    border-bottom: #39e75f 1px solid;
+    border-bottom: #39b385 1px solid;
     margin-bottom: 1rem;
 
 }
