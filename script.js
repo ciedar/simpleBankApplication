@@ -249,63 +249,79 @@ const logOutBtn = document.querySelector(".active");
 loginButton.addEventListener("click", function (a) {
     a.preventDefault();
     loginFunction();
-    zloz0.addEventListener("click", function () {
-        let inner = `<div class="credit--card">
-        <div class="credit--card--div">
-        <h2 class="credit--card-h"> Wniosek o karte kredytowa </h2>
-        <div class="testt">
-        <h3> Parametry karty </h3>
-        </div>
-        <img src="img/cover.jpg" class="credit-card">
-        <div class="credit--limit--div">
-        <p> Wnioskowany limit na karcie </p>
-        <input type="number" placeholder="kwota" class="credit" value="30 000"></input>
-        </div>
-        <form class="cc">
-        <h3> Dzień spłaty karty </h3>
-            <input type="checkbox" id="date1" class="check--credit">
-            <label for="date1" class="check--credit" >01</label><br>
-            <input type="checkbox" id="date2" class="check--credit">
-            <label for="date2" class="check--credit" >10</label><br>
-            <input type="checkbox" id="date3" class="check--credit">
-            <label for="date3" class="check--credit" >20</label>
-        </form>
-        <button class="credit--btn"> Wyślij wniosek </button>                             
-        </div>
-        </div>`;
-        createModal(inner);
-
-    })
-    transferBtn.addEventListener("click", function () {
-        let inner = `<div class="transfer--">
-        <h2> Przelew krajowy z </h2>
-        <div class="transfer--from-acc">
-        <h4>Konto Osobiste ${currentAccount.owner}</h4>
-        <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
-        <p>Saldo: </p>
-        <h3>${currentAccount.balance} PLN</h3>
-        </div>
-        <div class="transfer--div">
-        <div class="transfer--div-where">
-        <p>Numer rachunku odbiorcy</p>
-        <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
-        </div>
-        <div class="transfer--div-amount">
-        <p>Kwota</p>
-        <input class="transfer--input-amount" type="number" placeholder="Kwota"> </input>
-        </div>
-        <button class="transfer--btn"> > </button>                             
-        </div>
-        </div>`;
-        createModal(inner);
-
-    })
-
-
-
 });
 
 showModal()
 logOutFunction();
-console.log("tak");
+
+
+
+zloz0.addEventListener("click", function () {
+    let inner = `<div class="credit--card">
+    <div class="credit--card--div">
+    <h2 class="credit--card-h"> Wniosek o karte kredytowa </h2>
+    <div class="testt">
+    <h3> Parametry karty </h3>
+    </div>
+    <img src="img/cover.jpg" class="credit-card">
+    <div class="credit--limit--div">
+    <p> Wnioskowany limit na karcie </p>
+    <input type="number" placeholder="kwota" class="credit" value="30 000"></input>
+    </div>
+    <form class="cc">
+    <h3> Dzień spłaty karty </h3>
+        <input type="checkbox" id="date1" class="check--credit">
+        <label for="date1" class="check--credit" >01</label><br>
+        <input type="checkbox" id="date2" class="check--credit">
+        <label for="date2" class="check--credit" >10</label><br>
+        <input type="checkbox" id="date3" class="check--credit">
+        <label for="date3" class="check--credit" >20</label>
+    </form>
+    <button class="credit--btn"> Wyślij wniosek </button>                             
+    </div>
+    </div>`;
+    createModal(inner);
+
+})
+
+
+zloz1.addEventListener("click", function () {
+    let inner = `<div class="application--div">
+                <h2> Wniosek o kredyt gotówkowy</h2>
+                <div class="request--div"> 
+                <p>Kwota wnioskowana </p>
+                <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
+                </div>
+                <button class="credit--btn"> Wyślij wniosek </button> 
+                </div>`;
+    createModal(inner);
+
+})
+
+
+
+transferBtn.addEventListener("click", function () {
+    let inner = `<div class="transfer--">
+    <h2> Przelew krajowy z </h2>
+    <div class="transfer--from-acc">
+    <h4>Konto Osobiste ${currentAccount.owner}</h4>
+    <p>Numer Twojego konta: ${currentAccount.accountNr}</p>
+    <p>Saldo: </p>
+    <h3>${currentAccount.balance} PLN</h3>
+    </div>
+    <div class="transfer--div">
+    <div class="transfer--div-where">
+    <p>Numer rachunku odbiorcy</p>
+    <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
+    </div>
+    <div class="transfer--div-amount">
+    <p>Kwota</p>
+    <input class="transfer--input-amount" type="number" placeholder="Kwota"> </input>
+    </div>
+    <button class="transfer--btn"> > </button>                             
+    </div>
+    </div>`;
+    createModal(inner);
+
+})
 
