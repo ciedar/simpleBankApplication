@@ -158,7 +158,11 @@ const showModal = function () {
             })
         } else if (a.innerHTML === "Kontakt") {
             a.addEventListener("click", function () {
-                inner = ``
+                inner = `<div class="contact--div">
+                        <h2>Wyślij nam wiadomość</h2>
+                        <input class="contact--div-input" type="text" placeholder="wiadomosc"></input>
+                        <button class="transfer--btn"> > </button>
+                        </div>`
                 createModal(inner);
             })
         } else if (a.innerHTML === "Przelewy") {
