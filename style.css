@@ -95,6 +95,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* justify-content: center; */
     visibility: visible;
 
 
@@ -119,6 +120,7 @@ h1 {
     display: flex;
     justify-content: flex-start;
     gap: 3rem;
+    align-items: center;
 
     width: 50%;
     /* background-color: #ff1744; */
@@ -138,6 +140,7 @@ h1 {
 
 .hidden--bar a:hover {
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .hidden--bar button:hover {

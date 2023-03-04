@@ -234,6 +234,8 @@ function logOutFunction() {
         navbar.style.visibility = "visible";
         document.querySelector(".history--section").style.visibility = "hidden";
         hiddenNavBarOff();
+        loginInput.value = "";
+        passwordInput.value = "";
     })
 }
 
