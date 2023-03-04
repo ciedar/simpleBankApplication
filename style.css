@@ -419,10 +419,17 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
 
     margin-right: auto;
     margin-left: auto;
+    border: #39b385 1px solid;
+    background-color: #f2f2f2;
+    border-radius: 1rem;
+    padding: 10px;
+    height: 250px;
+    width: 500px;
 }
 
 .contact--div-input {
