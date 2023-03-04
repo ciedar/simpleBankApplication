@@ -291,7 +291,7 @@ zloz1.addEventListener("click", function () {
                 <h2> Wniosek o kredyt gotówkowy</h2>
                 <div class="request--div"> 
                 <p>Kwota wnioskowana </p>
-                <input class="transfer--input-where" type="number" placeholder="Numer Konta"> </input>
+                <input class="transfer--input-where" type="number" placeholder="Kwota"> </input>
                 </div>
                 <button class="credit--btn"> Wyślij wniosek </button> 
                 </div>`;
